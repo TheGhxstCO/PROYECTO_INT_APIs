@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oráculo del Tarot - Consulta Mística</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/tarot.css">
+</head>
+<body>
+    <div class="crystal-overlay"></div>
+    
+    <div class="container">
+        <header>
+            <div class="moon-gate"></div>
+            <h1>Oráculo del Tarot</h1>
+            <p class="subtitle">Descubre los mensajes del universo</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Sección de Consulta -->
+            <section class="card-section">
+                <h2 class="section-title">
+                    <i class="fas fa-crystal-ball"></i>
+                    Tu Carta del Día
+                </h2>
+                
+                <div class="card-display" id="card-display">
+                    <div class="initial-message">
+                        <div class="tarot-card placeholder">
+                            <div class="card-back"></div>
+                        </div>
+                        <p>Presiona el botón para revelar tu destino...</p>
+                    </div>
+                </div>
+
+                <button class="btn-mystic" id="btn-consultar">
+                    <i class="fas fa-star-and-crescent"></i>
+                    Consultar el Oráculo
+                </button>
+
+                <!-- Mensaje de carga -->
+                <div class="loading hidden" id="loading">
+                    <div class="crystal-spinner"></div>
+                    <p>El universo responde a tu consulta...</p>
+                </div>
+
+                <!-- Mensaje de error -->
+                <div class="error-message hidden" id="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>Los astros no están alineados. Intenta nuevamente.</p>
+                </div>
+            </section>
+
+            <!-- Sección de Historial -->
+            <section class="card-section">
+                <h2 class="section-title">
+                    <i class="fas fa-scroll"></i>
+                    Tu Camino Recorrido
+                </h2>
+                
+                <div class="history-container" id="history-container">
+                    <div class="empty-history">
+                        <i class="fas fa-feather-alt"></i>
+                        <p>Tus consultas aparecerán aquí</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/JS/tarot.js"></script>
+</body>
+</html>

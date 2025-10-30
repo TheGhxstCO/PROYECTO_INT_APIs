@@ -1,0 +1,522 @@
+:root {
+    --purple-mystic: #6D28D9;
+    --purple-dark: #4C1D95;
+    --gold: #F59E0B;
+    --gold-light: #FBBF24;
+    --dark: #1E1B2E;
+    --darker: #0F0F1F;
+    --light: #E2E8F0;
+    --crystal: rgba(255, 255, 255, 0.1);
+    --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(109, 40, 217, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+        linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+    color: var(--light);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.crystal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="crystals" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="50" r="0.8" fill="rgba(255,255,255,0.02)"/><circle cx="80" cy="80" r="1.2" fill="rgba(255,255,255,0.04)"/></pattern></defs><rect width="100" height="100" fill="url(%23crystals)"/></svg>');
+    pointer-events: none;
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInDown 1.2s ease;
+    position: relative;
+}
+
+.moon-gate {
+    width: 120px;
+    height: 120px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    position: relative;
+    box-shadow: 
+        0 0 30px rgba(245, 158, 11, 0.3),
+        inset 0 0 30px rgba(245, 158, 11, 0.2);
+    animation: pulse 4s infinite alternate;
+}
+
+.moon-gate::before {
+    content: '✦';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(245, 158, 11, 0.8);
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(45deg, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    font-style: italic;
+    color: var(--gold-light);
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card-section {
+    background: rgba(30, 27, 46, 0.7);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.card-section:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(245, 158, 11, 0.3);
+}
+
+.section-title {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 300;
+    border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+    padding-bottom: 0.5rem;
+}
+
+.section-title i {
+    font-size: 1.8rem;
+}
+
+.btn-mystic {
+    background: linear-gradient(45deg, var(--purple-mystic), var(--purple-dark));
+    color: var(--gold-light);
+    border: none;
+    padding: 1.2rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    margin: 0 auto;
+    box-shadow: 
+        0 5px 20px rgba(109, 40, 217, 0.4),
+        0 0 0 1px rgba(245, 158, 11, 0.2);
+    font-family: inherit;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-mystic::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s;
+}
+
+.btn-mystic:hover::before {
+    left: 100%;
+}
+
+.btn-mystic:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+        0 10px 25px rgba(109, 40, 217, 0.6),
+        0 0 0 1px rgba(245, 158, 11, 0.4);
+}
+
+.btn-mystic:active {
+    transform: translateY(0) scale(1);
+}
+
+.btn-mystic:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.loading {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.3rem;
+    color: var(--gold);
+}
+
+.crystal-spinner {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+}
+
+.crystal-spinner::before {
+    content: '🔮';
+    font-size: 3rem;
+    animation: crystalPulse 2s infinite ease-in-out;
+}
+
+.card-display {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(15, 15, 31, 0.5);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(245, 158, 11, 0.1);
+    position: relative;
+}
+
+.card-display::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid rgba(245, 158, 11, 0.1);
+    border-radius: 12px;
+    pointer-events: none;
+}
+
+.initial-message {
+    text-align: center;
+}
+
+.tarot-card {
+    width: 180px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--purple-mystic), var(--purple-dark));
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 0 0 2px var(--gold),
+        0 0 20px rgba(245, 158, 11, 0.3);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+
+.tarot-card.placeholder {
+    background: linear-gradient(45deg, var(--dark), var(--purple-dark));
+}
+
+.card-back {
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 30%, var(--purple-mystic) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, var(--gold) 0%, transparent 50%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-size: 3rem;
+}
+
+.tarot-card.revealed {
+    animation: cardReveal 1.5s ease-out;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.card-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    color: var(--gold);
+    text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+.card-type {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(109, 40, 217, 0.3);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    color: var(--gold-light);
+}
+
+.card-meaning, .card-desc {
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.7;
+}
+
+.card-meaning {
+    font-style: italic;
+    color: var(--gold-light);
+    border-left: 3px solid var(--gold);
+    padding-left: 1rem;
+}
+
+.error-message {
+    color: #FECACA;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(239, 68, 68, 0.1);
+    border-radius: 10px;
+    margin-top: 1rem;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.history-container {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.empty-history {
+    text-align: center;
+    padding: 3rem;
+    color: var(--gold-light);
+    opacity: 0.6;
+}
+
+.empty-history i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.history-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--gold);
+    transition: var(--transition);
+    animation: slideInRight 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.history-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent, rgba(245, 158, 11, 0.05), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.history-item:hover::before {
+    opacity: 1;
+}
+
+.history-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
+}
+
+.history-name {
+    font-weight: bold;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.history-type {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background: rgba(109, 40, 217, 0.2);
+    border-radius: 12px;
+}
+
+.history-meaning {
+    font-style: italic;
+    margin-bottom: 0.8rem;
+    color: var(--gold-light);
+    font-size: 0.9rem;
+}
+
+.history-date {
+    font-size: 0.7rem;
+    opacity: 0.5;
+    text-align: right;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Scrollbar personalizado */
+.history-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.history-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.history-container::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 
+            0 0 30px rgba(245, 158, 11, 0.3),
+            inset 0 0 30px rgba(245, 158, 11, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 
+            0 0 40px rgba(245, 158, 11, 0.4),
+            inset 0 0 40px rgba(245, 158, 11, 0.3);
+    }
+}
+
+@keyframes crystalPulse {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1) rotate(180deg);
+        opacity: 0.7;
+    }
+}
+
+@keyframes cardReveal {
+    0% {
+        transform: rotateY(90deg) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: rotateY(0deg) scale(1.1);
+    }
+    100% {
+        transform: rotateY(0deg) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
