@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loader.style.display = "none";
     if (container) container.classList.remove("hidden");
   };
-
-  // --- API 1: SANTIAGO A ---
+  
   async function cargarUselessFact() {
     mostrarCarga();
     try {

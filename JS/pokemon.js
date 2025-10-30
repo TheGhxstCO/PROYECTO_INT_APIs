@@ -1,8 +1,6 @@
-// Estado
 let history = [];
 let soundOn = true;
 
-// Traducciones
 const stats = {
     'hp': 'PS',
     'attack': 'Ataque',
@@ -12,7 +10,6 @@ const stats = {
     'speed': 'Velocidad'
 };
 
-// Sonidos
 const playSound = (type) => {
     if (!soundOn) return;
     const ctx = new (window.AudioContext || window.webkitAudioContext)();
@@ -48,7 +45,6 @@ const playSound = (type) => {
     }
 };
 
-// Controles
 document.getElementById('soundBtn').onclick = () => {
     soundOn = !soundOn;
     const btn = document.getElementById('soundBtn');
@@ -65,7 +61,6 @@ document.getElementById('themeBtn').onclick = () => {
     localStorage.theme = document.body.classList.contains('dark') ? 'dark' : 'light';
 };
 
-// Historial
 const updateHistory = (name) => {
     history = [name, ...history.filter(h => h !== name)].slice(0, 5);
     localStorage.history = JSON.stringify(history);
@@ -80,7 +75,6 @@ const searchHistory = (name) => {
     search();
 };
 
-// Búsqueda
 const search = async () => {
     const input = document.getElementById('input').value.trim();
     
@@ -152,12 +146,10 @@ const showPokemon = (d) => {
     `;
 };
 
-// Enter para buscar
 document.getElementById('input').onkeypress = (e) => {
     if (e.key === 'Enter') search();
 };
 
-// Cargar datos guardados
 if (localStorage.theme === 'dark') {
     document.body.classList.add('dark');
     document.getElementById('themeBtn').textContent = '☀️';
