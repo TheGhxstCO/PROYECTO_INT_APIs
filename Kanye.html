@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanye Wisdom - Generador de Frases</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/CSS/Kanye.css">
+</head>
+<body>
+    <div class="album-overlay"></div>
+    <div class="vinyl-record"></div>
+    
+    <div class="container">
+        <!-- Header con temática Graduation -->
+        <header class="kanye-header">
+            <div class="album-art">
+                <div class="record-hole"></div>
+                <div class="record-glow"></div>
+            </div>
+            <h1 class="main-title">Kanye Wisdom</h1>
+            <p class="subtitle">Frases del genio - Álbum: Graduation</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Sección de Frase Principal -->
+            <section class="quote-section">
+                <div class="quote-container">
+                    <div class="quote-display" id="quote-display">
+                        <div class="initial-message">
+                            <i class="fas fa-quote-left"></i>
+                            <p>Presiona el botón para recibir sabiduría de Kanye</p>
+                            <i class="fas fa-quote-right"></i>
+                        </div>
+                    </div>
+
+                    <button class="btn-kanye" id="btn-generar">
+                        <i class="fas fa-star"></i>
+                        Nueva Frase Kanye
+                    </button>
+
+                    <!-- Mensaje de carga -->
+                    <div class="loading hidden" id="loading">
+                        <div class="beat-spinner"></div>
+                        <p>Kanye está creando...</p>
+                    </div>
+
+                    <!-- Mensaje de error -->
+                    <div class="error-message hidden" id="error-message">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div>
+                            <p>No se pudo conectar con la sabiduría de Kanye</p>
+                            <p class="error-detail">Intenta nuevamente</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Historial -->
+            <section class="history-section">
+                <div class="history-container">
+                    <h2 class="section-title">
+                        <i class="fas fa-history"></i>
+                        Frases Anteriores
+                    </h2>
+                    
+                    <div class="history-list" id="history-list">
+                        <div class="empty-history">
+                            <i class="fas fa-comment"></i>
+                            <p>Tu historial de frases aparecerá aquí</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección de Estadísticas -->
+            <section class="stats-section">
+                <div class="stats-container">
+                    <h2 class="section-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Tus Estadísticas Kanye
+                    </h2>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-number" id="total-quotes">0</div>
+                            <div class="stat-label">Frases Obtenidas</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="session-count">0</div>
+                            <div class="stat-label">En esta Sesión</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="favorite-count">0</div>
+                            <div class="stat-label">Favoritas</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="kanye-footer">
+            <p>Powered by Kanye Rest API • Graduation Album Theme</p>
+        </footer>
+    </div>
+
+    <script src="/JS/Kanye.js"></script>
+</body>
+</html>
