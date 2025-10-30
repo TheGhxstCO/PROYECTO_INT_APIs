@@ -17,7 +17,7 @@ body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background: url('../images/pokemon-background-17x8jxp3vmf1tef0.jpg') center/cover fixed;
+    background: url('/IMAGES/pokemon-background-17x8jxp3vmf1tef0.jpg') center/cover fixed;
     opacity: 0.15;
     z-index: -1;
     transition: opacity 0.3s;
