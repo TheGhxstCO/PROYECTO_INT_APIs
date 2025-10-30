@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DATOS INUTILES API</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <header>
+    <h1>DATOS INÚTILES</h1>
+     <button class="back-btn" onclick="window.location.href='index.html'"><b>VOLVER</b></button>
+  </header>
+
+  <main id="contenido" data-api="useless" class="main-container">
+  <div id="loader" class="loader"></div>
+
+  <div id="fact-container" class="fact-card hidden">
+    <h2>Dato inútil del día</h2>
+    <p id="fact-text">Cargando dato curioso...</p>
+    <button id="nuevoDato" class="refresh-btn"><b>¡OTRO DATO!</b></button>
+  </div>
+</main>
+
+  <script defer src="/JS/script.js"></script>
+
+</body>
+</html>

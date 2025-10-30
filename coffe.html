@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee API ☕</title>
+  <link rel="stylesheet" href="/CSS/style.css">
+</head>
+<body>
+  <header>
+    <h1 class="titulo">☕ Coffee API</h1>
+    <button class="back-btn" onclick="window.location.href='index.html'">← Volver</button>
+  </header>
+
+  <main id="contenido" data-api="coffee">
+    <div id="loader" class="loader"></div>
+
+    <div id="api-container" class="fact-card">
+      <h2 id="coffee-name">Cargando café...</h2>
+      <img id="coffee-img" src="" alt="Coffee image" class="coffee-img">
+      <p id="coffee-desc" class="coffee-desc">Espere un momento, estamos sirviendo el café...</p>
+
+      <button id="nuevoDato" class="refresh-btn">🔄 Otro café</button>
+    </div>
+  </main>
+
+  <script src="/JS/script.js"></script>
+</body>
+</html>

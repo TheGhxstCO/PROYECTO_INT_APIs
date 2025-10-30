@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorador de Pokémon</title>
+    <link rel="stylesheet" href="/CSS/styles2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Explorador de Pokémon</h1>
+            <div class="controls">
+                <button class="btn-icon active" id="soundBtn" title="Sonido">🔊</button>
+                <button class="btn-icon" id="themeBtn" title="Tema">🌙</button>
+            </div>
+        </div>
+        
+        <button class="btn-random" onclick="randomPokemon()">Pokémon Aleatorio</button>
+
+        <div class="history">
+            <h3>Búsquedas recientes</h3>
+            <div class="history-items" id="history">
+                <span style="color: #95a5a6; font-size: 0.85em; font-style: italic;">Sin búsquedas previas</span>
+            </div>
+        </div>
+        
+        <div class="search-box">
+            <input type="text" id="input" placeholder="pikachu, charizard o 25...">
+            <button onclick="search()">Buscar</button>
+        </div>
+
+        <div id="result">
+            <div style="color: #7f8c8d; margin-top: 50px; line-height: 1.8;">
+                Busca un Pokémon para comenzar
+                <div style="margin-top: 15px; font-size: 0.95em; color: #95a5a6;">
+                    <strong>Ejemplos:</strong> pikachu, charizard, bulbasaur, mewtwo, 1, 25, 150
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/JS/pokemon.js"></script>
+</body>
+</html>
